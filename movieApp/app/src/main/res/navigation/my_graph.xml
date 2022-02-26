@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_graph"
+    app:startDestination="@id/tvShowsFragment">
+
+    <fragment
+        android:id="@+id/tvShowDetailsFragment"
+        android:name="com.fatih.movieapp.view.TvShowDetailsFragment"
+        android:label="fragment_tv_show_details"
+        tools:layout="@layout/fragment_tv_show_details" >
+        <argument
+            android:name="tvShow"
+            app:argType="com.fatih.movieapp.model.TvShow" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowsFragment"
+        android:name="com.fatih.movieapp.view.TvShowsFragment"
+        android:label="fragment_tv_shows"
+        tools:layout="@layout/fragment_tv_shows" >
+        <action
+            android:id="@+id/action_tvShowsFragment_to_tvShowDetailsFragment"
+            app:destination="@id/tvShowDetailsFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/enter_anim2"
+            app:popExitAnim="@anim/exit_anim2" />
+        <action
+            android:id="@+id/action_tvShowsFragment_to_watchListFragment"
+            app:destination="@id/watchListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/enter_anim2"
+            app:popExitAnim="@anim/exit_anim2" />
+        <action
+            android:id="@+id/action_tvShowsFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/enter_anim2"
+            app:popExitAnim="@anim/exit_anim2" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchListFragment"
+        android:name="com.fatih.movieapp.view.WatchListFragment"
+        android:label="WatchListFragment" >
+        <action
+            android:id="@+id/action_watchListFragment_to_tvShowDetailsFragment"
+            app:destination="@id/tvShowDetailsFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/enter_anim2"
+            app:popExitAnim="@anim/exit_anim2" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.fatih.movieapp.view.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_tvShowDetailsFragment"
+            app:destination="@id/tvShowDetailsFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/enter_anim2"
+            app:popExitAnim="@anim/exit_anim2" />
+    </fragment>
+</navigation>
